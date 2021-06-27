@@ -21,7 +21,7 @@ public class StreetAddressParserTest {
     ObjectMapper mapper = new ObjectMapper();
     StreetAddressParser streetAddressParser = new StreetAddressParser();
 
-    @ParameterizedTest()
+    @ParameterizedTest
     @CsvFileSource(resources = "/data.csv", numLinesToSkip = 1)
     public void testParser_validAddresses(String input, String expected) throws JsonProcessingException {
         StreetAddress expectedStreetAddress = mapper.readValue(expected, StreetAddress.class);
